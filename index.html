@@ -38,27 +38,27 @@
         }
         #result {
             text-align: center;
+            margin-top: 20px;
         }
         #thumbnail {
-            margin-top: 20px;
             width: 200px;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
-        #embed-container {
+        .episode-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
-            width: 80%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            position: relative;
-            display: none;
         }
-        #embed-container iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .episode {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #ecf0f1;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -90,6 +90,20 @@
                             <p>${movie.description}</p>
                             <img id="thumbnail" src="${movie.thumbnail}" alt="${movie.title} Thumbnail" onclick="playMovie('${movie.embedLink}')">
                         `;
+                        
+                        // If it's a TV series, add episodes container
+                        if (movie.seasons) {
+                            let episodeContainerHTML = `<div class="episode-container">`;
+                            for (let season = 1; season <= movie.seasons; season++) {
+                                episodeContainerHTML += `<h3>Season ${season} Episodes</h3>`;
+                                for (let episode = 1; episode <= movie.episodesPerSeason[season - 1]; episode++) {
+                                    episodeContainerHTML += `<div class="episode" onclick="playEpisode('${movie.embedLink}', ${season}, ${episode})">Ep-${episode}</div>`;
+                                }
+                            }
+                            episodeContainerHTML += `</div>`;
+                            resultDiv.innerHTML += episodeContainerHTML;
+                        }
+
                         embedContainer.style.display = 'none'; // Hide the embed container initially
                     } else {
                         resultDiv.innerHTML = '<p>Movie not found in our database.</p>';
@@ -103,6 +117,11 @@
 
             videoEmbed.src = embedLink;
             embedContainer.style.display = 'block'; // Show the embed container
+        }
+
+        function playEpisode(baseLink, season, episode) {
+            const newEmbedLink = baseLink.replace(/\/\d+\/\d+$/, `/${season}/${episode}`);
+            playMovie(newEmbedLink);
         }
     </script>
 </body>
