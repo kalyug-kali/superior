@@ -3,25 +3,25 @@
         {
             "title": "Inception",
             "description": "A thief who steals corporate secrets through the use of dream-sharing technology.",
-            "thumbnail": "images/inception.jpg",
+            "thumbnail": "inception.jpg",
             "embedLink": "https://vidsrc.to/embed/movie/tt1375666"
         },
         {
             "title": "The Matrix",
             "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-            "thumbnail": "images/thematrix.jpg",
+            "thumbnail": "thematrix.jpg",
             "embedLink": "https://vidsrc.to/embed/movie/tt0133093"
         },
         {
             "title": "Interstellar",
             "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-            "thumbnail": "images/interstellar.jpg",
+            "thumbnail": "interstellar.jpg",
             "embedLink": "https://vidsrc.to/embed/movie/tt0816692"
         },
         {
             "title": "Panchayat",
             "description": "A comedy-drama series about an engineering graduate who joins as a secretary of a Panchayat office in a remote village.",
-            "thumbnail": "images/panchayat.jpg",
+            "thumbnail": "panchayat.jpg",
             "embedLink": "https://vidsrc.to/embed/tv/tt12004706/1/1",
             "seasons": 2,
             "episodesPerSeason": [8, 8],
