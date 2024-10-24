@@ -93,7 +93,7 @@
                             <img id="thumbnail" src="${movie.thumbnail}" alt="${movie.title} Thumbnail" onclick="playMovie('${movie.embedLink}')">
                         `;
                         
-                        // If it's a TV series, add episodes container
+                       
                         if (movie.seasons) {
                             let episodeContainerHTML = `<div class="episode-container">`;
                             for (let season = 1; season <= movie.seasons; season++) {
@@ -106,7 +106,7 @@
                             resultDiv.innerHTML += episodeContainerHTML;
                         }
 
-                        embedContainer.style.display = 'none'; // Hide the embed container initially
+                        embedContainer.style.display = 'none'; 
                     } else {
                         resultDiv.innerHTML = '<p>Movie not found in our database.</p>';
                     }
@@ -118,7 +118,7 @@
             const videoEmbed = document.getElementById('video-embed');
 
             videoEmbed.src = embedLink;
-            embedContainer.style.display = 'block'; // Show the embed container
+            embedContainer.style.display = 'block'; 
         }
 
         function playEpisode(baseLink, season, episode) {
