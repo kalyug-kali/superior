@@ -1,0 +1,63 @@
+body {
+    background-color: #141414;
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+.header {
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.logo {
+    width: 120px;
+}
+
+#main-content {
+    padding-top: 100px;
+}
+
+.movie-carousel {
+    padding: 20px 50px;
+}
+
+.carousel-title {
+    font-size: 1.4vw;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carousel-content {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 15px; /* For scrollbar */
+}
+
+/* Hide scrollbar for a cleaner look */
+.carousel-content::-webkit-scrollbar {
+    display: none;
+}
+.carousel-content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.movie-poster {
+    border-radius: 4px;
+    width: 15vw; /* Responsive width */
+    max-width: 250px;
+    min-width: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05);
+}
